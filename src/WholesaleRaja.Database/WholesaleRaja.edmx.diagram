@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="24b4205a381b4aed9c421828aa686eb7" Name="Diagram1">
+        <EntityTypeShape EntityType="WholesaleRajaModel.aspnet_Applications" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.aspnet_Membership" Width="1.5" PointX="3" PointY="8.25" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.aspnet_Paths" Width="1.5" PointX="3" PointY="17.5" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.aspnet_PersonalizationAllUsers" Width="1.5" PointX="5.25" PointY="21" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.aspnet_PersonalizationPerUser" Width="1.5" PointX="7.5" PointY="14.5" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.aspnet_Profile" Width="1.5" PointX="7.5" PointY="18.375" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.aspnet_Roles" Width="1.5" PointX="3" PointY="14.5" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.aspnet_SchemaVersions" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.aspnet_Users" Width="1.5" PointX="5.25" PointY="11.5" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.aspnet_WebEvent_Events" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.WSR_City" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.WSR_Country" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.WSR_State" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.WSR_UserInfo" Width="1.5" PointX="7.5" PointY="10" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.vw_aspnet_Applications" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.vw_aspnet_MembershipUsers" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.vw_aspnet_Profiles" Width="1.5" PointX="9.75" PointY="7.75" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.vw_aspnet_Roles" Width="1.5" PointX="9.75" PointY="10.75" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.vw_aspnet_Users" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.vw_aspnet_UsersInRoles" Width="1.5" PointX="11.75" PointY="4.75" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.vw_aspnet_WebPartState_Paths" Width="1.5" PointX="11.75" PointY="7.75" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.vw_aspnet_WebPartState_Shared" Width="1.5" PointX="11.75" PointY="10.75" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.vw_aspnet_WebPartState_User" Width="1.5" PointX="13.75" PointY="0.75" />
+        <AssociationConnector Association="WholesaleRajaModel.FK__aspnet_Me__Appli__4E88ABD4" />
+        <AssociationConnector Association="WholesaleRajaModel.FK__aspnet_Pa__Appli__00200768" />
+        <AssociationConnector Association="WholesaleRajaModel.FK__aspnet_Ro__Appli__6D0D32F4" />
+        <AssociationConnector Association="WholesaleRajaModel.FK__aspnet_Us__Appli__3E52440B" />
+        <AssociationConnector Association="WholesaleRajaModel.FK__aspnet_Me__UserI__4F7CD00D" />
+        <AssociationConnector Association="WholesaleRajaModel.FK__aspnet_Pe__PathI__05D8E0BE" />
+        <AssociationConnector Association="WholesaleRajaModel.FK__aspnet_Pe__PathI__09A971A2" />
+        <AssociationConnector Association="WholesaleRajaModel.FK__aspnet_Pe__UserI__0A9D95DB" />
+        <AssociationConnector Association="WholesaleRajaModel.FK__aspnet_Pr__UserI__6383C8BA" />
+        <AssociationConnector Association="WholesaleRajaModel.FK_WSR_UserInfo" />
+        <AssociationConnector Association="WholesaleRajaModel.FK_WSR_City" />
+        <AssociationConnector Association="WholesaleRajaModel.FK_WSR_State" />
+        <AssociationConnector Association="WholesaleRajaModel.aspnet_UsersInRoles" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.WSR_Product" Width="1.5" PointX="10.375" PointY="13.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
