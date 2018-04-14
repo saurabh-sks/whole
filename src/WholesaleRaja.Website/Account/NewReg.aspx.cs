@@ -62,5 +62,10 @@ namespace WholesaleRaja.Website.Account
             txtEmail.Text = "";
                  
         }
+
+        protected void ddlBusinessType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

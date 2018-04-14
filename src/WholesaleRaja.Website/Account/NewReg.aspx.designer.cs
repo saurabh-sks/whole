@@ -157,13 +157,22 @@ namespace WholesaleRaja.Website.Account {
         protected global::System.Web.UI.WebControls.DropDownList ddlBusinessType;
         
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// rfvBusinessType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvBusinessType;
+        
+        /// <summary>
+        /// pnlGstnWrapper control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlGstnWrapper;
         
         /// <summary>
         /// txtGstn control.

@@ -53,18 +53,20 @@
 
     <div>
         Type of Establishment<sup class="mandatoryMark">*</sup>:
-        <asp:DropDownList ID="ddlBusinessType" runat="server">
-
+        <asp:DropDownList ID="ddlBusinessType" runat="server" OnSelectedIndexChanged="ddlBusinessType_SelectedIndexChanged">
+            <asp:ListItem Text="--Select--" Value="--Select--" />
+            <asp:ListItem Text="Registered" Value="Registered" />
+            <asp:ListItem Text="Unregistered" Value="Unregistered" />
         </asp:DropDownList>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="txtGstn" runat="server" ErrorMessage="Please Provide GSTN Number" Display="Dynamic" />
+        <asp:RequiredFieldValidator ID="rfvBusinessType" ControlToValidate="ddlBusinessType" runat="server" ErrorMessage="Please Select Establishment Type" Display="Dynamic"  InitialValue="--Select--"/>
     </div>
 
-    <div>
+    <asp:Panel ID="pnlGstnWrapper" runat="server">
         GSTN Number<sup class="mandatoryMark">*</sup>:
         <asp:TextBox ID="txtGstn" runat="server" />
         <asp:RequiredFieldValidator ID="rfvGstn" ControlToValidate="txtGstn" runat="server" ErrorMessage="Please Provide GSTN Number" Display="Dynamic" />
 
-    </div>
+    </asp:Panel>
 
     <div>
         Name of the Directors/Owner/Proprietor/Partners:
