@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WholesaleRaja.Products.UserControls {
+namespace WholesaleRaja.Website.ProductManagement {
     
     
-    public partial class ProductDetailsControl {
+    public partial class ManageProductCategories {
         
         /// <summary>
-        /// txtQuantity control.
+        /// ManageCategories control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtQuantity;
-        
-        /// <summary>
-        /// btnAddToCart control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddToCart;
+        protected global::System.Web.UI.UserControl ManageCategories;
     }
 }

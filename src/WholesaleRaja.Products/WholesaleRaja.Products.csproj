@@ -89,7 +89,15 @@
   <ItemGroup>
     <Compile Include="Helpers\ProductHelper.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ManageCategories.ascx.cs">
+      <DependentUpon>ManageCategories.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ManageCategories.ascx.designer.cs">
+      <DependentUpon>ManageCategories.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ProductDetailsControl.ascx.cs">
       <DependentUpon>ProductDetailsControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -108,6 +116,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="UserControls\ManageCategories.ascx" />
     <Content Include="UserControls\ProductDetailsControl.ascx" />
   </ItemGroup>
   <PropertyGroup>

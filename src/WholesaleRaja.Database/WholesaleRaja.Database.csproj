@@ -151,6 +151,12 @@
     <Compile Include="WSR_Product.cs">
       <DependentUpon>WholesaleRaja.tt</DependentUpon>
     </Compile>
+    <Compile Include="WSR_ProductCategory.cs">
+      <DependentUpon>WholesaleRaja.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WSR_ProductCategoryMapping.cs">
+      <DependentUpon>WholesaleRaja.tt</DependentUpon>
+    </Compile>
     <Compile Include="WSR_State.cs">
       <DependentUpon>WholesaleRaja.tt</DependentUpon>
     </Compile>

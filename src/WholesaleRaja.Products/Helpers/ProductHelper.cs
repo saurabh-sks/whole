@@ -10,6 +10,13 @@ namespace WholesaleRaja.Products.Helpers
 {
     public class ProductHelper
     {
+        private static DateTime GetIndianTime()
+        {
+            TimeZoneInfo INDIAN_ZONE = TimeZoneInfo.FindSystemTimeZoneById("India Standard Time");
+            DateTime indianTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, INDIAN_ZONE);
+            return indianTime;
+        }
+
         public static void AddProduct(Product prod)
         {
             CultureInfo hindi = new CultureInfo("hi-IN");
@@ -54,10 +61,11 @@ namespace WholesaleRaja.Products.Helpers
             using (WholesaleRajaEntities db = new WholesaleRajaEntities())
             {
                 WSR_Product prod = db.WSR_Product.Where(x => x.ProductId.ToString() == productId).FirstOrDefault();
-                if (prod !=null && !string.IsNullOrWhiteSpace(prod.Name))
+                if (prod != null && !string.IsNullOrWhiteSpace(prod.Name))
                 {
                     Product product = new Product
                     {
+                        ProductId = prod.ProductId,
                         Name = prod.Name,
                         Image = prod.Image,
                         SKU = prod.SKU,
@@ -80,8 +88,98 @@ namespace WholesaleRaja.Products.Helpers
                 {
                     return null;
                 }
-                
+
             }
+        }
+
+        public static bool AddCategory(string categoryName, string userName, string seoTitle, string seoDescription, string seoMetaKeywords)
+        {
+            List<WSR_ProductCategory> categoryList = new List<WSR_ProductCategory>();
+            WSR_ProductCategory newCategory = new WSR_ProductCategory
+            {
+                CategoryName = categoryName,
+                CategoryUrl = null,
+                CreatedBy = userName,
+                CreatedDate = GetIndianTime(),
+                EnabledDate = GetIndianTime(),
+                EnabledBy = userName,
+                IsActive = true,
+                IsSubcategory = false,
+                SeoTitle = seoTitle,
+                SeoDescription = seoDescription,
+                SeoMetaKeywords = seoMetaKeywords,
+            };
+
+            using (WholesaleRajaEntities db = new WholesaleRajaEntities())
+            {
+                categoryList = db.WSR_ProductCategory.ToList();
+                bool categoryExists = categoryList.Where(x => x.IsSubcategory == false).Any(x => x.CategoryName.ToLower() == categoryName.ToLower());
+                if (categoryExists)
+                {
+                    return false;
+                }
+                else
+                {
+                    db.WSR_ProductCategory.Add(newCategory);
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+        }
+
+        public static bool AddSubcategory(int parentCategoryId, string userName, string subcategoryName, string subcategorySeoTitle, string subCategorySeoDesc, string subCategoryMetaKeywords)
+        {
+            List<WSR_ProductCategory> subCategoryList = new List<WSR_ProductCategory>();
+            WSR_ProductCategory newSubCategory = new WSR_ProductCategory
+            {
+                CategoryName = subcategoryName,
+                CategoryUrl = null,
+                ParentCategoryId = parentCategoryId,
+                CreatedBy = userName,
+                CreatedDate = GetIndianTime(),
+                EnabledDate = GetIndianTime(),
+                EnabledBy = userName,
+                IsActive = true,
+                IsSubcategory = true,
+                SeoTitle = subcategorySeoTitle,
+                SeoDescription = subCategorySeoDesc,
+                SeoMetaKeywords = subCategoryMetaKeywords,
+            };
+            using (WholesaleRajaEntities db = new WholesaleRajaEntities())
+            {
+                subCategoryList = db.WSR_ProductCategory.Where(x=>x.ParentCategoryId== parentCategoryId && x.IsSubcategory == true).ToList();
+                bool subCategoryExists = subCategoryList.Where(x => x.ParentCategoryId == parentCategoryId && x.IsSubcategory == true).Any(x => x.CategoryName.ToLower() == subcategoryName.ToLower());
+                if (subCategoryExists)
+                {
+                    return false;
+                }
+                else
+                {
+                    db.WSR_ProductCategory.Add(newSubCategory);
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+        }
+
+        public static List<WSR_ProductCategory> GetAllCategoryDetails()
+        {
+            List<WSR_ProductCategory> categoryList = new List<WSR_ProductCategory>();
+            using (WholesaleRajaEntities db = new WholesaleRajaEntities())
+            {
+                categoryList = db.WSR_ProductCategory.Where(x => x.IsSubcategory == false).ToList();
+            }
+            return categoryList;
+        }
+
+        public static List<WSR_ProductCategory> GetSubCategory(int categoryId)
+        {
+            List<WSR_ProductCategory> subCategoryList = new List<WSR_ProductCategory>();
+            using (WholesaleRajaEntities db = new WholesaleRajaEntities())
+            {
+                subCategoryList = db.WSR_ProductCategory.Where(x => x.ParentCategoryId == categoryId).ToList();
+            }
+            return subCategoryList;
         }
     }
 }

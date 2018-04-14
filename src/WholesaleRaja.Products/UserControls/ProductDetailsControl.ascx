@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ProductDetailsControl.ascx.cs" Inherits="WholesaleRaja.Products.UserControls.ProductDetailsControl" %>
 
 <div style="margin-top:200px">
-    <asp:HiddenField ID="productId" runat="server" />
+    <input id="hProductId" value="<%:productDetails.ProductId.ToString() %>" type="hidden" />
     <div class="col-sm-12 col-md-6">
         <img src=<%: productDetails.Image %> />
     </div>
@@ -24,7 +24,9 @@
             <asp:Button ID="btnAddToCart" runat="server" Text="Add to Cart" OnClick="btnAddToCart_Click" />
         </div>
         <div class="productDescription">
-
+            <p>
+                <%:productDetails.Description %>
+            </p>
         </div>
     </div>
 

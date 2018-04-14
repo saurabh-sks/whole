@@ -42,6 +42,8 @@
         <AssociationConnector Association="WholesaleRajaModel.FK_WSR_State" />
         <AssociationConnector Association="WholesaleRajaModel.aspnet_UsersInRoles" />
         <EntityTypeShape EntityType="WholesaleRajaModel.WSR_Product" Width="1.5" PointX="10.375" PointY="13.75" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.WSR_ProductCategory" Width="1.5" PointX="12.375" PointY="13.75" />
+        <EntityTypeShape EntityType="WholesaleRajaModel.WSR_ProductCategoryMapping" Width="1.5" PointX="14.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

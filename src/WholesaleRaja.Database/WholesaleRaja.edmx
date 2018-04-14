@@ -178,6 +178,45 @@
           <Property Name="UpdatedBy" Type="nvarchar" MaxLength="256" />
           <Property Name="DisabledBy" Type="nvarchar" MaxLength="256" />
         </EntityType>
+        <EntityType Name="WSR_ProductCategory">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="256" />
+          <Property Name="IsSubcategory" Type="bit" />
+          <Property Name="ParentCategoryId" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CategoryUrl" Type="nvarchar" MaxLength="256" />
+          <Property Name="SeoTitle" Type="nvarchar" MaxLength="256" />
+          <Property Name="SeoDescription" Type="nvarchar" MaxLength="512" />
+          <Property Name="SeoMetaKeywords" Type="nvarchar" MaxLength="512" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="EnabledDate" Type="datetime" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="DisabledDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="256" />
+          <Property Name="EnabledBy" Type="nvarchar" MaxLength="256" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="256" />
+          <Property Name="DisabledBy" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="WSR_ProductCategoryMapping">
+          <Key>
+            <PropertyRef Name="MappingId" />
+          </Key>
+          <Property Name="MappingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="EnabledDate" Type="datetime" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="DisabledDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="256" />
+          <Property Name="EnabledBy" Type="nvarchar" MaxLength="256" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="256" />
+          <Property Name="DisabledBy" Type="nvarchar" MaxLength="256" />
+        </EntityType>
         <EntityType Name="WSR_State">
           <Key>
             <PropertyRef Name="StateCode" />
@@ -871,6 +910,8 @@ warning 6002: The table/view 'WholesaleRaja.dbo.vw_aspnet_WebPartState_User' doe
           <EntitySet Name="WSR_City" EntityType="Self.WSR_City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WSR_Country" EntityType="Self.WSR_Country" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WSR_Product" EntityType="Self.WSR_Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WSR_ProductCategory" EntityType="Self.WSR_ProductCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WSR_ProductCategoryMapping" EntityType="Self.WSR_ProductCategoryMapping" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WSR_State" EntityType="Self.WSR_State" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WSR_UserInfo" EntityType="Self.WSR_UserInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vw_aspnet_Applications" EntityType="Self.vw_aspnet_Applications" store:Type="Views" store:Schema="dbo">
@@ -1437,6 +1478,8 @@ warning 6002: The table/view 'WholesaleRaja.dbo.vw_aspnet_WebPartState_User' doe
             <Parameter Name="RoleIds" Mode="In" Type="String" />
           </FunctionImport>
           <EntitySet Name="WSR_Product" EntityType="WholesaleRajaModel.WSR_Product" />
+          <EntitySet Name="WSR_ProductCategory" EntityType="WholesaleRajaModel.WSR_ProductCategory" />
+          <EntitySet Name="WSR_ProductCategoryMapping" EntityType="WholesaleRajaModel.WSR_ProductCategoryMapping" />
           </EntityContainer>
         <ComplexType Name="aspnet_Membership_GetPassword_Result">
           <Property Type="String" Name="Column1" Nullable="true" MaxLength="128" />
@@ -1983,6 +2026,45 @@ warning 6002: The table/view 'WholesaleRaja.dbo.vw_aspnet_WebPartState_User' doe
           <Property Name="SalePriceString" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Name="SavingsAmountString" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="WSR_ProductCategory">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="IsSubcategory" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="SeoTitle" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="SeoDescription" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="SeoMetaKeywords" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="EnabledDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="DisabledDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EnabledBy" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="DisabledBy" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ParentCategoryId" Type="Int32" />
+          <Property Name="CategoryUrl" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WSR_ProductCategoryMapping">
+          <Key>
+            <PropertyRef Name="MappingId" />
+          </Key>
+          <Property Name="MappingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="EnabledDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="DisabledDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EnabledBy" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="DisabledBy" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2431,6 +2513,47 @@ warning 6002: The table/view 'WholesaleRaja.dbo.vw_aspnet_WebPartState_User' doe
                 <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WSR_ProductCategory">
+            <EntityTypeMapping TypeName="WholesaleRajaModel.WSR_ProductCategory">
+              <MappingFragment StoreEntitySet="WSR_ProductCategory">
+                <ScalarProperty Name="CategoryUrl" ColumnName="CategoryUrl" />
+                <ScalarProperty Name="ParentCategoryId" ColumnName="ParentCategoryId" />
+                <ScalarProperty Name="DisabledBy" ColumnName="DisabledBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="EnabledBy" ColumnName="EnabledBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DisabledDate" ColumnName="DisabledDate" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="EnabledDate" ColumnName="EnabledDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="SeoMetaKeywords" ColumnName="SeoMetaKeywords" />
+                <ScalarProperty Name="SeoDescription" ColumnName="SeoDescription" />
+                <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsSubcategory" ColumnName="IsSubcategory" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WSR_ProductCategoryMapping">
+            <EntityTypeMapping TypeName="WholesaleRajaModel.WSR_ProductCategoryMapping">
+              <MappingFragment StoreEntitySet="WSR_ProductCategoryMapping">
+                <ScalarProperty Name="DisabledBy" ColumnName="DisabledBy" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="EnabledBy" ColumnName="EnabledBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DisabledDate" ColumnName="DisabledDate" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="EnabledDate" ColumnName="EnabledDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="MappingId" ColumnName="MappingId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

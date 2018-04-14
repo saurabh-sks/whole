@@ -4,6 +4,6 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<uc1:ProductDetailsControl runat="server" id="ProductDetailsControl" ProductId="1" />
+<uc1:ProductDetailsControl runat="server" id="ProductDetailsControl" />
 
 </asp:Content>

@@ -15,7 +15,7 @@ namespace WholesaleRaja.Products.UserControls
         public string ProductId { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ProductId = Request.QueryString["p"];
             GetProductDetails(ProductId);
         }
 

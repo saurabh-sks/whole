@@ -13,6 +13,7 @@ namespace WholesaleRaja.Website.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //var aa = Membership.GetUser().UserName;
 
         }
 

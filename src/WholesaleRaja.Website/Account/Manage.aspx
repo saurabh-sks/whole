@@ -11,6 +11,7 @@
         <div><a href="/ProductManagement/AddProduct" title="Add Products">Add Products</a></div>
         <div><a href="/ProductDetails" title="Add Products">Product Details</a></div>
         <div><a href="/Account/AddRolesToUser" title="Add Roles to User">Add Roles to User</a></div>
+        <div><a href="/ProductManagement/ManageProductCategories" title="Manage Product Categories">Manage Product Categories</a></div>
     </asp:PlaceHolder>
 
 </asp:Content>

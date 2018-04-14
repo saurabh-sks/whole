@@ -51,6 +51,8 @@ namespace WholesaleRaja.Database
         public virtual DbSet<vw_aspnet_WebPartState_Shared> vw_aspnet_WebPartState_Shared { get; set; }
         public virtual DbSet<vw_aspnet_WebPartState_User> vw_aspnet_WebPartState_User { get; set; }
         public virtual DbSet<WSR_Product> WSR_Product { get; set; }
+        public virtual DbSet<WSR_ProductCategory> WSR_ProductCategory { get; set; }
+        public virtual DbSet<WSR_ProductCategoryMapping> WSR_ProductCategoryMapping { get; set; }
     
         public virtual ObjectResult<string> aspnet_AnyDataInTables(Nullable<int> tablesToCheck)
         {
