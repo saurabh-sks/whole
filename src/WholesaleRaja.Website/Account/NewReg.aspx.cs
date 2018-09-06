@@ -52,7 +52,16 @@ namespace WholesaleRaja.Website.Account
 
         protected void rblRegistrationType_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (rblRegistrationType.SelectedValue == "vendor")
+            {
+                pnlBusinessType.Visible = false;
+                pnlGstnWrapper.Visible = true;
+            }
+            if (rblRegistrationType.SelectedValue == "buyer")
+            {
+                pnlBusinessType.Visible = true;
+                pnlGstnWrapper.Visible = false;
+            }
         }
 
         private void ClearAllControls()
@@ -65,7 +74,15 @@ namespace WholesaleRaja.Website.Account
 
         protected void ddlBusinessType_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (ddlBusinessType.SelectedValue== "Registered")
+            {
+                pnlGstnWrapper.Visible = true;
+            }
+            else
+            {
+                pnlGstnWrapper.Visible = false;
+            }
+            
         }
     }
 }

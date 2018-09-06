@@ -148,6 +148,15 @@ namespace WholesaleRaja.Website.Account {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvBusinessName;
         
         /// <summary>
+        /// pnlBusinessType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlBusinessType;
+        
+        /// <summary>
         /// ddlBusinessType control.
         /// </summary>
         /// <remarks>
@@ -380,5 +389,41 @@ namespace WholesaleRaja.Website.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revCategoryDeptEmail;
+        
+        /// <summary>
+        /// txtRegisteredAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRegisteredAddress;
+        
+        /// <summary>
+        /// rfvRegisteredAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvRegisteredAddress;
+        
+        /// <summary>
+        /// txtRegisteredCity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRegisteredCity;
+        
+        /// <summary>
+        /// txtRegisteredState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRegisteredState;
     }
 }

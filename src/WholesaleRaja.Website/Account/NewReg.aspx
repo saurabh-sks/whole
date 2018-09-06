@@ -51,15 +51,15 @@
 
     </div>
 
-    <div>
+    <asp:Panel ID="pnlBusinessType" runat="server">
         Type of Establishment<sup class="mandatoryMark">*</sup>:
-        <asp:DropDownList ID="ddlBusinessType" runat="server" OnSelectedIndexChanged="ddlBusinessType_SelectedIndexChanged">
+        <asp:DropDownList ID="ddlBusinessType" runat="server" OnSelectedIndexChanged="ddlBusinessType_SelectedIndexChanged" AutoPostBack="true">
             <asp:ListItem Text="--Select--" Value="--Select--" />
             <asp:ListItem Text="Registered" Value="Registered" />
             <asp:ListItem Text="Unregistered" Value="Unregistered" />
         </asp:DropDownList>
         <asp:RequiredFieldValidator ID="rfvBusinessType" ControlToValidate="ddlBusinessType" runat="server" ErrorMessage="Please Select Establishment Type" Display="Dynamic"  InitialValue="--Select--"/>
-    </div>
+    </asp:Panel>
 
     <asp:Panel ID="pnlGstnWrapper" runat="server">
         GSTN Number<sup class="mandatoryMark">*</sup>:
@@ -110,6 +110,21 @@
         <div>
             Category Department Email Id:<asp:TextBox ID="txtCategoryDeptEmailId" runat="server" />
             <asp:RegularExpressionValidator ID="revCategoryDeptEmail" ControlToValidate="txtCategoryDeptEmailId" runat="server" ErrorMessage="Please enter a valid Email Id" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
+        </div>
+        <div>
+            <div>
+                Registered Address:
+                <asp:TextBox ID="txtRegisteredAddress" runat="server" Rows="5" TextMode="MultiLine" /> 
+                <asp:RequiredFieldValidator ID="rfvRegisteredAddress" runat="server" ControlToValidate="txtRegisteredAddress" ErrorMessage="Please input address" Display="Dynamic" />
+            </div>
+            <div>
+                City:
+                <asp:TextBox ID="txtRegisteredCity" runat="server" Text="Bengaluru" ReadOnly="true" />
+            </div>
+            <div>
+                State:
+                <asp:TextBox ID="txtRegisteredState" runat="server" Text="Karnataka" ReadOnly="true" />
+            </div>
         </div>
     </div>
 
